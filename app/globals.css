@@ -2,32 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
+/* For Webkit browsers */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: var(hsl(--card));
+  border-radius: 20px;
+}
+
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 32 44% 95%;
+    --foreground: 0 0% 32%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 32%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 32%;
+    --primary: 132 27% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 48 18% 44%;
+    --secondary-foreground: 0 0% 32%;
+    --muted: 32 44% 95%;
+    --muted-foreground: 0 0% 26%;
+    --accent: 30 46% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 3 40% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 31% 82%;
+    --input: 32 44% 95%;
+    --ring: 76 33% 30%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 15% 3%;
+    --foreground: 0 0% 94%;
+    --card: 30 8% 9%;
+    --card-foreground: 0 0% 94%;
+    --popover: 0 0% 16%;
+    --popover-foreground: 0 0% 94%;
+    --primary: 132 27% 36%;
+    --primary-foreground: 0 0% 87%;
+    --secondary: 49 15% 51%;
+    --secondary-foreground: 0 0% 87%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 71%;
+    --accent: 30 33% 59%;
+    --accent-foreground: 180 8% 14%;
+    --destructive: 3 39% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 3% 15%;
+    --input: 240 3% 15%;
+    --ring: 82 32% 37%;
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  body {
+    @apply bg-background text-foreground;
   }
 }
