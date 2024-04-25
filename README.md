@@ -101,4 +101,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Mohamed Hassan- [@badi3nnn](https://twitter.com/badi3nnn) - <m7mdbadi3@gmail.com>
 
-Project Link: [Zee](zee-delta.vercel.app)
+Project Link: [Zee](https://zee-delta.vercel.app/)
